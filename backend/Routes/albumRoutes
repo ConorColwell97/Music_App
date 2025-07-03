@@ -1,0 +1,15 @@
+const express = require("express");
+const { getAlbum, addAlbum, deleteAlbum, updateAlbumName, updateAlbumArtist, updateAlbumReleaseYear, updateAlbumListeners } = require("../Controllers/albumController.js");
+
+const router = express.Router();
+
+router.get("/:albName", getAlbum);
+router.post("/", addAlbum);
+router.put("/addAlb/:addAlb", addAlbum);
+router.delete("/:albName", deleteAlbum);
+router.put("/albName/:albName", updateAlbumName);
+router.put("/albArtist/:albArtist", updateAlbumArtist);
+router.put("/year/:year", updateAlbumReleaseYear);
+router.put("/listeners/:listeners", updateAlbumListeners);
+
+module.exports = router;
